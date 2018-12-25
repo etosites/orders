@@ -8,13 +8,9 @@ class Product extends Model
 {
     protected $table = 'products';
 
-
     public function orderProduct()
     {
         return $this->belongsTo('App\OrderProduct');
     }
-
-
-
 
 }
