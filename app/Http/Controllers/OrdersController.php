@@ -77,16 +77,15 @@ class OrdersController extends Controller
     public function update(Request $request, $orderId)
     {
 
-
-                Partner::where('id', $request->partnerId)->update([
-                    'email' => $request->partnerEmail,
-                    'name' => $request->partnerName,
-                ]);
-                Order::where('id', $orderId)->update([
-                    'status' => $request->orderStatus,
-                ]);
-                $order = Order::setPriceAndNameToOrder(Order::findOrFail($orderId));
-                return view('orders.edit', ['order' => $order]);
+        Partner::where('id', $request->partnerId)->update([
+            'email' => $request->partnerEmail,
+            'name' => $request->partnerName,
+        ]);
+        Order::where('id', $orderId)->update([
+            'status' => $request->orderStatus,
+        ]);
+        $order = Order::setPriceAndNameToOrder(Order::findOrFail($orderId));
+        return view('orders.edit', ['order' => $order]);
     }
 
     /**
