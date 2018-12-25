@@ -30,16 +30,16 @@ class Order extends Model
         return $this->belongsTo('App\Partner');
     }
 
-    static public function getOrders(){
+    static public function getOrders()
+    {
 
         $orders = self::paginate(25);
-        self::setPriceAndNameToOrders($orders);
-        //echo '<pre>';var_dump($orders);
-        
+        self::setPriceAndNameToOrders($orders);        
         return $orders;
     }
 
-    static public function setPriceAndNameToOrders($orders){
+    static public function setPriceAndNameToOrders($orders)
+    {
         
         foreach($orders as $order)
         {
