@@ -14,7 +14,8 @@ class OrderProduct extends Model
         return $this->hasMany('App\Product');
     }
     
-    public function order() {
+    public function order() 
+    {
         return $this->belongsTo('App\Order');
     }
 
