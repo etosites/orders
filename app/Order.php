@@ -21,7 +21,8 @@ class Order extends Model
     */
 
     
-    public function orderProducts() {
+    public function orderProducts() 
+    {
         return $this->hasMany('App\OrderProduct');
     }
 
@@ -32,7 +33,6 @@ class Order extends Model
 
     static public function getOrders()
     {
-
         $orders = self::paginate(25);
         self::setPriceAndNameToOrders($orders);        
         return $orders;
